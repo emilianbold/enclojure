@@ -38,7 +38,6 @@
     [org.enclojure.commons.validation :as validation]
     [org.enclojure.ide.repl.repl-data :as repl-data]
     [org.enclojure.repl.main :as repl-main]
-    [clojure.contrib.except :as contrib.except]
     )
   (:import (org.enclojure.repl IReplWindow IRepl IReplWindowFactory)
             (org.enclojure.ide.repl ReplPanel)

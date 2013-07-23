@@ -38,8 +38,8 @@
        "}
   org.enclojure.repl.main
   (:refer-clojure :exclude (with-bindings))
-  (:use clojure.contrib.pprint)
-  (:require [clojure.contrib.pprint :as pprint]
+  (:use clojure.pprint)
+  (:require [clojure.pprint :as pprint]
     [clojure.main :exclude (with-binding)])
   (:import (java.net Socket ServerSocket)
     (java.util.logging Level Logger)
@@ -112,10 +112,10 @@
         piped-in (clojure.lang.LineNumberingPushbackReader. (PipedReader. cmd-wtr))
         piped-out (PrintWriter. (PipedWriter. result-rdr))
         repl-thread-fn #(binding [;*print-base* *print-base* Not in 1.0
-                                  *print-circle* *print-circle*
+                                  ;*print-circle* *print-base*
                                   *print-length* *print-length*
                                   *print-level* *print-level*
-                                  *print-lines* *print-lines*  
+                                  ;*print-lines* *print-lines*  
                                   *print-miser-width* *print-miser-width*
                                   ;*print-radix* *print-radix* Not in 1.0
                                   *print-right-margin* *print-right-margin*

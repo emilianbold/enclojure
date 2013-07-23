@@ -150,7 +150,7 @@
 (defn evaluate-in-repl
   ([repl-id expr ns-node]
     (let [{:keys [repl-fn repl-panel] print-pretty
-           'clojure.contrib.pprint/*print-pretty*} (get-repl-config repl-id)          
+           'clojure.pprint/*print-pretty*} (get-repl-config repl-id)          
           expr (build-expr print-pretty ns-node expr)]
       (logger/debug  "\neval expr:{}\n" expr)
       (.resultReceived repl-panel (._replEditorPane repl-panel) "\n")
@@ -163,16 +163,16 @@
 (defn evaluate-in-repl2
   ([repl-id expr ns-node]
     (let [{:keys [repl-fn repl-panel] print-pretty 
-           'clojure.contrib.pprint/*print-pretty*} (get-repl-config repl-id)
+           'clojure.pprint/*print-pretty*} (get-repl-config repl-id)
           expr (if ns-node
                  (if print-pretty
                    (str "(binding [*ns* *ns*]" ns-node
-                            "(eval (clojure.contrib.pprint/pprint (do " 
+                            "(eval (clojure.pprint/pprint (do " 
                                 (pr-str expr) "\n))))")
                    (str "(binding [*ns* *ns*]" ns-node  "(eval '(do "
                         (pr-str expr) "\n)))"))
                  (if print-pretty
-                   (str "(eval '(clojure.contrib.pprint/pprint (do " 
+                   (str "(eval '(clojure.pprint/pprint (do " 
                      (pr-str expr) "\n)))")
                  (str " " (pr-str expr) " \n")))
           ]
@@ -188,9 +188,9 @@
   [repl-id repl-pane new-val]
   (let [bv (boolean new-val)]
     (logger/debug  "set pretty print to {}" bv)
-  (update-repl repl-id 'clojure.contrib.pprint/*print-pretty* bv)
+  (update-repl repl-id 'clojure.pprint/*print-pretty* bv)
   (evaluate-in-repl repl-id
-    (str "(set! clojure.contrib.pprint/*print-pretty* " bv ")"))
+    (str "(set! clojure.pprint/*print-pretty* " bv ")"))
   (.setSelected (.prettyPrintToggleButton repl-pane) bv)))
   
 
@@ -271,7 +271,7 @@ participates in the history lofic of the repl.  Useful for when you are evaling
 expressions in a file and you want to maintain history for this"
   ([repl-id expr ns-node]
     (let [{:keys [repl-fn repl-panel] print-pretty 
-           'clojure.contrib.pprint/*print-pretty*} (get-repl-config repl-id)]
+           'clojure.pprint/*print-pretty*} (get-repl-config repl-id)]
       (.resultReceived repl-panel (._replEditorPane repl-panel) expr)
       (send-to-repl repl-id expr ns-node)))
   ([repl-id expr]

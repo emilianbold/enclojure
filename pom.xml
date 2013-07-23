@@ -14,7 +14,7 @@
         <clojure.snapshot.tag/>
         <clojure.version>1.5.1</clojure.version>
         <enclojure.version.dev>1.5</enclojure.version.dev>
-        <enclojure.version.release>1.5</enclojure.version.release>
+        <enclojure.version.release>1.7</enclojure.version.release>
         <netbeans.release>RELEASE73</netbeans.release>
         <netbeans.version>RELEASE73</netbeans.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

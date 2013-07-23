@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>org-enclojure-plugin</artifactId>
     <packaging>nbm</packaging>
-    <version>1.6</version>
+    <version>1.7</version>
     <description>Enclojure plugin for Clojure development for NB 7.3</description>
     <name>Enclojure Clojure Plugin for NB 7.3</name>
     <parent>
@@ -62,6 +62,8 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-client</artifactId>
+            <version>1.6</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -400,6 +402,15 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>org-enclojure-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>org-enclojure-commons</artifactId>
         </dependency>
     </dependencies>
     <build>

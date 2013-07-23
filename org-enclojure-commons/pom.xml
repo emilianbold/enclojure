@@ -51,4 +51,5 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
     </dependencies>
+    <version>1.7</version>
 </project>

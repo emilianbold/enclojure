@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.enclojure</groupId>
     <artifactId>nb-enclojure-app</artifactId>
-    <version>1.6</version>
+    <version>1.7</version>
     <url>http://enclojure.org/</url>
     <description>Enclojure library.</description>
     <name>Enclojure Tools</name>

@@ -53,4 +53,5 @@
             </plugin>
         </plugins>
     </build>
+    <version>1.7</version>
 </project>

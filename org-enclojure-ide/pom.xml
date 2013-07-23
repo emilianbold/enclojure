@@ -40,4 +40,5 @@
             <artifactId>org-jdesktop-beansbinding</artifactId>
         </dependency>
     </dependencies>
+    <version>1.7</version>
 </project>

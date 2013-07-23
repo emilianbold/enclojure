@@ -5,7 +5,7 @@
     <parent>
         <artifactId>nb-enclojure-app</artifactId>
         <groupId>org.enclojure</groupId>
-        <version>1.6</version>
+        <version>1.7</version>
     </parent>
     <artifactId>org-enclojure-repl-server</artifactId>
     <name>org-enclojure-repl-server</name>

@@ -5,7 +5,7 @@
     <parent>
         <artifactId>nb-enclojure-app</artifactId>
         <groupId>org.enclojure</groupId>
-        <version>1.6</version>
+        <version>1.7</version>
     </parent>
     <artifactId>org-enclojure-repl-client</artifactId>
     <name>org-enclojure-repl-client</name>
@@ -13,10 +13,26 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-commons</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>clojure-contrib</artifactId>
+                    <groupId>org.clojure</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>clojure-contrib</artifactId>
+                    <groupId>org.clojure</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>swank-clojure</artifactId>
+                    <groupId>com.github.technomancy</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

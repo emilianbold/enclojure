@@ -11,13 +11,13 @@
         <groupId>org.enclojure</groupId>
         <artifactId>nb-enclojure-app</artifactId>
         <relativePath>../../../pom.xml</relativePath>
-        <version>1.6</version>
+        <version>1.7</version>
     </parent>
     <dependencies>
         <dependency>
-            <groupId>com.github.technomancy</groupId>
+            <groupId>swank-clojure</groupId>
             <artifactId>swank-clojure</artifactId>
-            <version>1.2.1</version>
+            <version>1.5.0-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.clojure</groupId>
@@ -54,7 +54,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>org-enclojure-repl-client</artifactId>
-            <version>1.6</version>
+            <version>1.7</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -579,34 +579,6 @@
             </resource>
         </resources>
         <plugins>
-            <!--<plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.4</version>
-            <executions>                
-              <execution>                  
-                <phase>validate</phase>
-                <configuration>
-                    <task>
-                        <echo message="whu cant i see this?????????" file="${basedir}echo.txt" />
-                        <echo message="whu cant i see this?????????" />
-                        <echo message="whu cant i see this?????????" />
-                        <echo message="whu cant i see this?????????" />
-                        <echo message="whu cant i see this?????????" />
-                        <java classname="clojure.main">
-                            <args>${basedir}/build-helper-scripts/zip_projects.clj</args>
-                            <classpath>
-                                <pathelement>org.clojure-${clojure.version}</pathelement>
-                                <pathelement>org.clojure.contrib-${clojure.version}</pathelement>
-                            </classpath>
-                        </java>
-                  </task>
-                </configuration>
-                <goals>
-                  <goal>run</goal>
-                </goals>
-              </execution>
-            </executions>
-      </plugin>-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>

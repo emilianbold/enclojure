@@ -19,12 +19,11 @@
   (:require
     [org.enclojure.ide.repl.classpaths :as classpaths]
     [org.enclojure.commons.c-slf4j :as logger]
-    [clojure.contrib.except :as except]
     )
   (:import (org.netbeans.api.java.classpath ClassPath GlobalPathRegistry
              GlobalPathRegistryEvent GlobalPathRegistryListener)
     (org.netbeans.modules.java.classpath ClassPathAccessor)
-    (java.lang ExceptionInInitializerError)
+    (java.lang ExceptionInInitializerError Exception)
     (org.netbeans.api.java.platform JavaPlatform)
     (org.netbeans.api.java.queries SourceForBinaryQuery)
     (org.netbeans.api.project Project ProjectUtils SourceGroup)
@@ -213,10 +212,9 @@ After that follows the compile dependant classpaths for each of the projects."
 (defn file-from-jar-url
   "Given a jar URL, return a File object that refers to it"
   [jar-url]
-  (except/throw-if-not
-        (instance? java.net.URL jar-url)
-    "Expected argument type of java.net.URL got %s" 
-        (str (or (nil? jar-url) "nil" jar-url)))
+  (when (not (instance? java.net.URL jar-url))
+    (throw (Exception. (str "Expected argument type of java.net.URL got " (or (nil? jar-url) "nil" jar-url)))) )
+  
   (when-let [jar-conn (.openConnection jar-url)]
     (get-file-name-from jar-conn)))
 

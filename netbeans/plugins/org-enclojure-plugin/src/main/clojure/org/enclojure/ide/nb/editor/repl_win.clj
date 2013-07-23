@@ -231,9 +231,7 @@ and port settings." repl-id) e)))))
               (classpath-utils/get-all-classpaths))))))
     (catch Exception e
       (error-reporting/report-error        
-        (str "Stand alone repl failed to start.  Make sure you have Clojure
-and Clojure.contrib jars in assigned Clojure Platform for the standalone REPL.
-See the Enclojure category under preferences to view your settings"
+        (str "Stand alone repl failed to start. See the Enclojure category under preferences to view your settings"
           (.getMessage e)) e))))
 
 
@@ -348,10 +346,7 @@ with java launcher."
           (-> irepl .getReplWindow .makeActive)))
     (catch Exception e
       (error-reporting/report-error        
-        (str (format "Project REPL for %s failed to start.  Make sure you have Clojure
-and Clojure.contrib jars as libraries in your project." repl-id) 
-          "\nThese are both required to start a repl."
-          "\nFor a project REPL, you can add them as libraries to the project.\n"
+        (str (format "Project REPL for %s failed to start." repl-id) 
           (.getMessage e))
           e)))))
         

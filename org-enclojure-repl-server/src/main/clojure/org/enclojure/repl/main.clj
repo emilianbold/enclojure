@@ -88,9 +88,9 @@
     (let [io-thread-fn (fn []
                          (try
                            (io-fn)
-                           (recur)
-                           (catch Exception ex
-                             (ex-fn (get-root-cause ex)))))
+                          (catch Exception ex
+                             (ex-fn (get-root-cause ex))) 
+                         ) (recur))
           io-thread (Thread. io-thread-fn)]
       (.start io-thread)
       #(.interrupt io-thread)))
@@ -123,7 +123,7 @@
                                   *print-suppress-namespaces* *print-suppress-namespaces*
                                   *print-pretty* *print-pretty*
                                   *warn-on-reflection* *warn-on-reflection*
-                                  *print-stack-trace-on-error* *print-stack-trace-on-error*
+                                  ;*print-stack-trace-on-error* *print-stack-trace-on-error*
                                   *in* piped-in
                                   *out* piped-out
                                   *err* (PrintWriter. *out*)]

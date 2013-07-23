@@ -1,7 +1,6 @@
 (ns build.zip-projects
  (:require
-   [clojure.contrib.duck-streams :as duck-streams]
-   [clojure.contrib.java-utils :as java-utils]
+   [clojure.java.io :as java-utils]
    [org.enclojure.commons.c-slf4j :as logger]
    [org.enclojure.repl.main :as repl.main]
    )

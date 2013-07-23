@@ -120,13 +120,13 @@ org.enclojure.ide.repl.repl-data for more info"
 (defn await-till
   "Wait for timeout-ms to see if the test passes."
   [pred timeout-ms]
-  (let [test-thread (Thread. #(try
+  (let [test-thread (Thread. (fn [] (try
                                 (when-not (Thread/interrupted)
                                   (when-not (pred)
                                     (Thread/yield)
-                                    (recur)))
+                                    ))
                                 (catch Throwable t
-                                  (logger/info  (.getMessage t)))))]
+                                  (logger/info  (.getMessage t)))) (recur)))]
     (.start test-thread)
     (.join test-thread timeout-ms)
     (when (.isAlive test-thread)

@@ -57,18 +57,18 @@
        (partition 3
          [
         'jvmAdditionArgsTextField "-Xms512m -Xmx512m" :jvm-additional-args
-       ; 'printBaseTextField  10   'clojure.contrib.pprint/*print-base*
-        'printCircleCheckBox false 'clojure.contrib.pprint/*print-circle*
+       ; 'printBaseTextField  10   'clojure.pprint/*print-base*
+        'printCircleCheckBox false 'clojure.pprint/*print-circle*
         'printLengthTextField  40 'clojure.core/*print-length*
         'printLevelTextField  4 'clojure.core/*print-level*
-        'printLinesTextField 25 'clojure.contrib.pprint/*print-lines*
-        'printMiserWidthTextField 40 'clojure.contrib.pprint/*print-miser-width*
-        ;'printRadixCheckBox false 'clojure.contrib.pprint/*print-radix*
-        'printRightMarginTextField  78 'clojure.contrib.pprint/*print-right-margin*
-        ';printSharedCheckBox false 'clojure.contrib.pprint/*print-shared*
+        'printLinesTextField 25 'clojure.pprint/*print-lines*
+        'printMiserWidthTextField 40 'clojure.pprint/*print-miser-width*
+        ;'printRadixCheckBox false 'clojure.pprint/*print-radix*
+        'printRightMarginTextField  78 'clojure.pprint/*print-right-margin*
+        ';printSharedCheckBox false 'clojure.pprint/*print-shared*
         'printStackTraceCheckBox false 'org.enclojure.repl.main/*print-stack-trace-on-error*
-        'printSuppressNamespaceCheckBox  false 'clojure.contrib.pprint/*print-suppress-namespaces*
-        'usePrettyPrintCheckBox  true 'clojure.contrib.pprint/*print-pretty*
+        'printSuppressNamespaceCheckBox  false 'clojure.pprint/*print-suppress-namespaces*
+        'usePrettyPrintCheckBox  true 'clojure.pprint/*print-pretty*
         'warnOnReflectionCheckBox  false 'clojure.core/*warn-on-reflection*
         'includeAllClasspathsCheckBox  true :include-all-project-classpaths
         'enableLogging  true :enable-logging

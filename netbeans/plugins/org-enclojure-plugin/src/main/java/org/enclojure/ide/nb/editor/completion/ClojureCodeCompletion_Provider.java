@@ -60,6 +60,7 @@ public class ClojureCodeCompletion_Provider implements CompletionProvider {
  private static final LogAdapter LOG = new LogAdapter(ClojureCodeCompletion_Provider.class.getName());
 
  static {try {
+            RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
             RT.var("clojure.core","require").invoke(Symbol.create("org.enclojure.ide.nb.editor.completion.cljcodecompletion"));
         } catch (Throwable ex) {
             Exceptions.printStackTrace(ex);
@@ -116,8 +117,11 @@ private ArrayList<PersistentArrayMap> Scenario1ListExtLib=new ArrayList<Persiste
 private ArrayList<PersistentArrayMap> Scenario2ListExtLib=new ArrayList<PersistentArrayMap>();
 private ArrayList<PersistentArrayMap> Scenario4ListExtLib=new ArrayList<PersistentArrayMap>();
 
+private ArrayList<PersistentArrayMap> CurrentList;
+
         public ClojureCodeCompletion_Provider(){
           try {
+            RT.load("clojure/core");
             RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
           } catch (IOException ex) {
             Exceptions.printStackTrace(ex);

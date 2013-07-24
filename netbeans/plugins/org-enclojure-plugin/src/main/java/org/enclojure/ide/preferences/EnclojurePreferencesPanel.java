@@ -38,6 +38,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
         RT.load("org/enclojure/ide/preferences/platform_options");
         RT.load("org/enclojure/ide/nb/editor/repl_win");
         RT.load("org/enclojure/ide/preferences/enclojure_options_category");
+       
       } catch (IOException ex) {
         Exceptions.printStackTrace(ex);
       } catch (ClassNotFoundException ex) {

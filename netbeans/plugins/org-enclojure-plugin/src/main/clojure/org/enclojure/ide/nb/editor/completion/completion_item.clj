@@ -113,7 +113,7 @@
   (AsyncCompletionTask.
     (proxy [AsyncCompletionQuery] []
       (query [#^CompletionResultSet completionResultSet
-              #^Document document
+
               i]
         (let [tool-tip (JToolTip.)
               tag (if namespace
@@ -145,7 +145,6 @@
   (AsyncCompletionTask.
     (proxy [AsyncCompletionQuery] []
       (query [completionResultSet
-              #^Document document
               i]
         (.setDocumentation completionResultSet
           (get-completion-doc item))

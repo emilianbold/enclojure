@@ -34,7 +34,13 @@ public class CreateStandaloneReplDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         
+        
+        
         try {
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
+            RT.load("org/enclojure/ide/settings/utils");
+            RT.load("org/enclojure/ide/settings/utils");
+        
             this.classPath.setText((String) loadSettings.invoke(ns_settings));
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

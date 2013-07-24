@@ -52,6 +52,7 @@ public class RunProjectWithReplContextMenuAction extends AbstractAction implemen
     private String labelFor(Project p) {
         assert p != null;
         try {
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
             return (String) runContextMenuNameFn.invoke(p);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -62,6 +63,7 @@ public class RunProjectWithReplContextMenuAction extends AbstractAction implemen
     private void perform(Project p) {
         assert p != null;
         try {
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
             startStopProjectReplFn.invoke(p);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

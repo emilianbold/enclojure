@@ -40,6 +40,7 @@ public final class NavByExprOut extends CookieAction {
         {
             JEditorPane pane = editorCookie.getOpenedPanes()[0];
             try {
+                RT.load("org/enclojure/ide/navigator/token_nav");
                 navCurrentFormStartFn.invoke(pane);
             } catch (Exception ex) {
                 Exceptions.printStackTrace(ex);

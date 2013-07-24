@@ -524,6 +524,7 @@ public class ClojureCodeCompletionItem implements CompletionItem {
     private Iterator getAllJavaClasses(JTextComponent component)
     {
             try {
+                RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
                 return ((Iterable)getalljavaclassesfn.invoke(component)).iterator();
 
             } catch (Exception ex) {
@@ -536,6 +537,7 @@ public class ClojureCodeCompletionItem implements CompletionItem {
     private Iterator getAllClojureNamespacesWithinNSnode(JTextComponent component)
     {
             try {
+                RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
                 return ((Iterable)getallclojurenamespacesfn.invoke(component)).iterator();
 
             } catch (Exception ex) {
@@ -548,6 +550,7 @@ public class ClojureCodeCompletionItem implements CompletionItem {
     private PersistentArrayMap addImportList(JTextComponent component,String javaList)
     {
             try {
+                RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
                 return (PersistentArrayMap)addimportlistfn.invoke(component,javaList);
 
             } catch (Exception ex) {

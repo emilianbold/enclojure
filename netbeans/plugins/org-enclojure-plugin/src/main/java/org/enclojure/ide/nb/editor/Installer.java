@@ -53,7 +53,9 @@ public class Installer extends ModuleInstall {
         
         etlog.log(Level.INFO,"Enclojure Starting the installer script stuff");
         try {
-
+            RT.load("clojure/core");
+            RT.load("org/enclojure/ide/nb/classpaths/listeners");
+            
             LOG.log(Level.INFO, "Enclojure module restored.");
 
             requireFn.invoke(Symbol.create("org.enclojure.ide.navigator.CljClassVisitor"));
@@ -117,6 +119,7 @@ public class Installer extends ModuleInstall {
    @Override
    public boolean closing() {
        try {
+           RT.load("org/enclojure/ide/repl/repl_manager");
            stopTrackingFn.invoke();
            RT.var("org.enclojure.ide.repl.repl-manager", "stop-repl-servers").invoke();
        } catch (Throwable e) {

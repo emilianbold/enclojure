@@ -167,6 +167,7 @@ public class ClojureTemplatePanelVisual extends JPanel implements DocumentListen
 
     private void browseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseButtonActionPerformed
         try {
+            RT.load("org/enclojure/ide/nb/clojure/project/create");
             String command = evt.getActionCommand();
             String path = this.projectLocationTextField.getText();
             Object dir = selectLocationFn.invoke(this, path);

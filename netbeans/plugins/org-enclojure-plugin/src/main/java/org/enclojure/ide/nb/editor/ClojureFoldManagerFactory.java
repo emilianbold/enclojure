@@ -33,6 +33,7 @@ public class ClojureFoldManagerFactory implements FoldManagerFactory {
     public FoldManager createFoldManager() {
         try {
             //return new ClojureFoldManager();
+            RT.load("org/enclojure/ide/nb/editor/folding/manager");
             return (FoldManager) clojureFoldManager.invoke();
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

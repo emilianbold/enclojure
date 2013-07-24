@@ -208,6 +208,7 @@ final public class ReplTopComponent extends TopComponent {
     protected void componentActivated()
     {
         try {
+            RT.load("org/enclojure/ide/nb/editor/repl_focus");
             setCaretVisibilityFn.invoke(_projectName, this._replPanel.GetEditorPane(), true);
             this.replFocusFn.invoke(this);
         } catch (Exception ex) {
@@ -219,6 +220,7 @@ final public class ReplTopComponent extends TopComponent {
     protected void componentDeactivated()
     {
         try {
+            RT.load("org/enclojure/ide/nb/editor/repl_focus");
             setCaretVisibilityFn.invoke(_projectName, this._replPanel.GetEditorPane(), false);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -326,6 +328,7 @@ final public class ReplTopComponent extends TopComponent {
         if(_projectName.compareTo(IDE_REPL) != 0)
         {
             try {
+                RT.load("org/enclojure/ide/nb/editor/repl_win");
                 stopProjectReplFn.invoke(_projectName, true);
             } catch (Exception ex) {
                 Exceptions.printStackTrace(ex);

@@ -38,6 +38,7 @@ public final class LoadFile extends CookieAction {
 
     protected void performAction(Node[] activatedNodes) {
         try {
+            RT.load("org/enclojure/ide/nb/actions/action_handler");
             loadFileFn.invoke(activatedNodes);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

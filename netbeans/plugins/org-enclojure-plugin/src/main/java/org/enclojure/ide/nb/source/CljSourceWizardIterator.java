@@ -85,6 +85,7 @@ public final class CljSourceWizardIterator implements WizardDescriptor.Instantia
 
     public Set instantiate() throws IOException {
         try {
+          RT.load("org/enclojure/ide/nb/source/add_file");
             _createFile.invoke(this, wizard);
 //        String className = Templates.getTargetName(wizard);
 //        FileObject pkg = Templates.getTargetFolder(wizard);
@@ -104,6 +105,7 @@ public final class CljSourceWizardIterator implements WizardDescriptor.Instantia
     public void initialize(WizardDescriptor wizard) {
         this.wizard = wizard;
         try {
+            RT.load("org/enclojure/ide/nb/source/add_file");
             LOG.log(Level.INFO,"Calling clojure init code.");
             this._validatorFunc =(IFn)this._setupWizard.invoke(this, wizard);
             if(current()!=null)

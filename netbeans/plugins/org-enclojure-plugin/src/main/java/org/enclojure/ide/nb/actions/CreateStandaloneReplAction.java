@@ -15,6 +15,7 @@ public final class CreateStandaloneReplAction implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         try {
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
             startNonProjectREPLFn.invoke(e);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

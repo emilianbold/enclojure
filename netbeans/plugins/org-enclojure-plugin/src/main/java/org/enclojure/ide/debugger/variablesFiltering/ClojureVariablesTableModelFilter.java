@@ -89,6 +89,7 @@ public class ClojureVariablesTableModelFilter implements TableModelFilter {
             LocalVariable localVar = (LocalVariable) node;
             String varName = localVar.getName();
             try {
+                RT.load("org/enclojure/ide/debugger/jdi_eval");
                 return (String) _getValueFn.invoke(varName);
             } catch (Exception ex) {
                 Exceptions.printStackTrace(ex);

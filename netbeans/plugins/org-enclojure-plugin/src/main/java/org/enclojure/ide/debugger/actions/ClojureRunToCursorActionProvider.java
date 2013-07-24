@@ -178,6 +178,7 @@ public class ClojureRunToCursorActionProvider extends ActionsProviderSupport {
         
         public void sessionRemoved (Session session) {
             try {
+                RT.load("org/enclojure/ide/debugger/jdi");
                 sessionRemovedFn.invoke(session);
             } catch (Exception ex) {
                 Exceptions.printStackTrace(ex);

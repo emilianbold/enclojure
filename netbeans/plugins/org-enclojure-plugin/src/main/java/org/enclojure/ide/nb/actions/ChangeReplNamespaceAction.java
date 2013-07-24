@@ -19,6 +19,7 @@ public final class ChangeReplNamespaceAction extends CookieAction {
     
     protected void performAction(Node[] activatedNodes) {
         try {
+            RT.load("org/enclojure/ide/nb/actions/action_handler");
             loadNamespaceFn.invoke(activatedNodes);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

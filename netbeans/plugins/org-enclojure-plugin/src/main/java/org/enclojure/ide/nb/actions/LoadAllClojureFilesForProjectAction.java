@@ -20,6 +20,7 @@ package org.enclojure.ide.nb.actions;
 
 import clojure.lang.RT;
 import java.awt.event.ActionEvent;
+import java.io.IOException;
 import java.util.Map;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -51,7 +52,15 @@ public class LoadAllClojureFilesForProjectAction extends AbstractAction implemen
     int sourceGroup=0;
     
     public LoadAllClojureFilesForProjectAction(int sourceGroup)
-        { this.sourceGroup = sourceGroup;}
+        { this.sourceGroup = sourceGroup;
+      try {
+        RT.load("org/enclojure/ide/nb/editor/repl_win");
+      } catch (IOException ex) {
+        Exceptions.printStackTrace(ex);
+      } catch (ClassNotFoundException ex) {
+        Exceptions.printStackTrace(ex);
+      }
+        }
 
     public void actionPerformed(ActionEvent e) {assert false;}
     public Action createContextAwareInstance(Lookup context) {

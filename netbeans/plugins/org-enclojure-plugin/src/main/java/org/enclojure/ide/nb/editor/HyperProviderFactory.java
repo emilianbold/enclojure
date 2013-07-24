@@ -34,6 +34,7 @@ public class HyperProviderFactory {
     static public HyperlinkProvider create ()
     {
         try {
+            RT.load("org/enclojure/ide/nb/editor/hyperlinks");
             return (HyperlinkProvider) createFn.invoke();
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

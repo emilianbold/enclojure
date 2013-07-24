@@ -84,6 +84,7 @@ public class ClojureNavigatorPanel implements NavigatorPanel {
 
     private void setNewContent (Collection newData) {
                     try {
+                          RT.load("org/enclojure/ide/navigator/views/navigator_panel");
                             _checkNewContextFn.invoke(panelUI,newData);
                         
                     } catch (Exception ex) {

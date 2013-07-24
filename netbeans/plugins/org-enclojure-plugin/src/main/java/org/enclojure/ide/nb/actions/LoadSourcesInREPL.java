@@ -20,6 +20,7 @@ public final class LoadSourcesInREPL extends CookieAction {
     
     protected void performAction(Node[] activatedNodes) {
         try {
+            RT.load("org/enclojure/ide/nb/actions/action_handler");
             EditCookie editCookie = activatedNodes[0].getLookup().lookup(EditCookie.class);
             loadSourcesFn.invoke(activatedNodes);
             // TODO use editCookie

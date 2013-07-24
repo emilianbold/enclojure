@@ -217,6 +217,7 @@ public class ClojureTemplateWizardIterator implements WizardDescriptor./*Progres
         try {
             //ET Temporary solution to make sure there is a clojure library setup in the users netbeans environment"
             //clojure.lang.RT.var("org.enclojure.ide.nb.editor.utils","ensure-clojure-lib").invoke("Clojure-1.0.0");
+            clojure.lang.RT.load("org/enclojure/ide/nb/clojure/project/create");
             clojure.lang.RT.var("org.enclojure.ide.nb.clojure.project.create","unzip-create-and-reg-project")
                     .invoke(source,projectRoot,defPackage,projectName);
         } catch (Exception ex) {

@@ -27,6 +27,7 @@ import org.netbeans.spi.editor.completion.CompletionDocumentation;
 import clojure.lang.RT;
 import clojure.lang.Var;
 import clojure.lang.Symbol;
+import java.io.IOException;
 import org.openide.util.Exceptions;
 
 @SuppressWarnings("unchecked") 
@@ -34,6 +35,7 @@ public class ClojureCodeCompletionDocumentation implements CompletionDocumentati
 
 
     static {try {
+            RT.load("clojure/core");
             RT.var("clojure.core","require").invoke(Symbol.create("org.enclojure.ide.nb.editor.completion.cljcodecompletion"));
         } catch (Throwable ex) {
             Exceptions.printStackTrace(ex);
@@ -49,6 +51,13 @@ public class ClojureCodeCompletionDocumentation implements CompletionDocumentati
 
     public ClojureCodeCompletionDocumentation (ClojureCodeCompletionItem item)
     {
+        try {
+          RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
+        } catch (IOException ex) {
+          Exceptions.printStackTrace(ex);
+        } catch (ClassNotFoundException ex) {
+          Exceptions.printStackTrace(ex);
+        }
         item1=item;
 
     }

@@ -20,11 +20,13 @@ package org.enclojure.ide.preferences;
 
 import clojure.lang.IFn;
 import clojure.lang.RT;
+import java.io.IOException;
 import org.netbeans.spi.options.OptionsPanelController;
 import org.openide.util.Exceptions;
 
 public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
-
+  
+  
     private final OptionsPanelController controller;
     IFn dispatcherFn = RT.var("org.enclojure.ide.preferences.platform-options","disp-hack");
     IFn startNonProjectREPLFn = RT.var("org.enclojure.ide.nb.editor.repl-win","start-stand-alone-repl-action");
@@ -32,7 +34,18 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
                                      ,"tabbed-panel-changed");
     public EnclojurePreferencesPanel(OptionsPanelController controller) {
         this.controller = controller;
+      try {
+        RT.load("org/enclojure/ide/preferences/platform_options");
+        RT.load("org/enclojure/ide/nb/editor/repl_win");
+        RT.load("org/enclojure/ide/preferences/enclojure_options_category");
+      } catch (IOException ex) {
+        Exceptions.printStackTrace(ex);
+      } catch (ClassNotFoundException ex) {
+        Exceptions.printStackTrace(ex);
+      }
         initComponents();
+        
+        
         // TODO listen to changes in form fields and call controller.changed()
     }
     
@@ -593,6 +606,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void removePlatformButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePlatformButtonActionPerformed
         try {
+            
             dispatcherFn.invoke("removePlatformButtonActionPerformed", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -601,6 +615,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void addPlatformButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPlatformButtonActionPerformed
                 try {
+            
             dispatcherFn.invoke("addPlatformButtonActionPerformed", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -609,6 +624,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void platformListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_platformListValueChanged
                 try {
+            
             dispatcherFn.invoke("platformListValueChanged", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -625,6 +641,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void removeClasspathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeClasspathButtonActionPerformed
                 try {
+            
             dispatcherFn.invoke("removeClasspathButtonActionPerformed", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -641,6 +658,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void classPathListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_classPathListValueChanged
                 try {
+            
             dispatcherFn.invoke("classPathListValueChanged", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -649,6 +667,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void platformNameTextFieldKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_platformNameTextFieldKeyTyped
                 try {
+            
             dispatcherFn.invoke("platformNameTextFieldKeyTyped", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -657,6 +676,7 @@ public final class EnclojurePreferencesPanel extends javax.swing.JPanel {
 
     private void setAsDefaultCheckBoxGuyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_setAsDefaultCheckBoxGuyItemStateChanged
                 try {
+            
             dispatcherFn.invoke("setAsDefaultCheckBoxGuyItemStateChanged", this, evt);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

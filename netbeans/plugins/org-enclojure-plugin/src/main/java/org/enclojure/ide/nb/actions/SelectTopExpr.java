@@ -39,6 +39,7 @@ public final class SelectTopExpr extends CookieAction {
         {
             JEditorPane pane = editorCookie.getOpenedPanes()[0];
             try {
+                RT.load("org/enclojure/ide/navigator/token_nav");
                 selectTopFormFn.invoke(pane);
             } catch (Exception ex) {
                 Exceptions.printStackTrace(ex);

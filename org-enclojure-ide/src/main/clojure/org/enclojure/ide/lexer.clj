@@ -16,6 +16,7 @@
   (:require
     [org.enclojure.commons.c-slf4j :as logger]
     )
+  (:use [clojure.set])
   )
 
 ; setup logging

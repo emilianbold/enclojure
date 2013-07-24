@@ -140,6 +140,7 @@ public class ConnectExternalReplDialog extends javax.swing.JDialog {
     private void connectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectButtonActionPerformed
         try {
             //Connect - if failed to connect - display red error on the dalog box
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
             connectExternalRepl.invoke(this.replName.getText(),
                     this.replServerHost.getText(),
                     Integer.parseInt(this.replServerPort.getText()));

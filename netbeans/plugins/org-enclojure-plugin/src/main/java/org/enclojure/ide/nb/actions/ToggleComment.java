@@ -33,6 +33,7 @@ public final class ToggleComment extends CookieAction {
     final Var toggleCommentFn = RT.var("org.enclojure.ide.nb.actions.CljComment", "perform-action");
     protected void performAction(Node[] activatedNodes) {
         try {
+            RT.load("org/enclojure/ide/nb/actions/CljComment");;
             EditorCookie editCookie = activatedNodes[0].getLookup().lookup(EditorCookie.class);
             toggleCommentFn.invoke(editCookie);
         } catch (Exception ex) {

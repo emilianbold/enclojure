@@ -19,6 +19,7 @@ public final class EvalExpressionInReplAction extends CookieAction {
 
     protected void performAction(Node[] activatedNodes) {
             try {
+              RT.load("org/enclojure/ide/nb/actions/action_handler");
             evalExprFn.invoke(activatedNodes);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

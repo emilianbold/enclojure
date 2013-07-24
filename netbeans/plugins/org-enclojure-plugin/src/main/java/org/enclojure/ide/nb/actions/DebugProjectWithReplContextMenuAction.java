@@ -60,6 +60,7 @@ public class DebugProjectWithReplContextMenuAction extends AbstractAction implem
         try {
             //??Project name can also be added to this returning string
             //??return ReplTopComponent.findInstance().GetDebugContextMenuName(p);
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
             return (String) debugContextMenuNameFn.invoke(p);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -74,6 +75,7 @@ public class DebugProjectWithReplContextMenuAction extends AbstractAction implem
 //        String msg = "Project location: " + FileUtil.getFileDisplayName(p.getProjectDirectory());
 //        DialogDisplayer.getDefault().notify(new NotifyDescriptor.Message(msg));
             //??ReplTopComponent.findInstance().AttachDetachDebugger(p);
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
             attachDetachDebugger.invoke(p);
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

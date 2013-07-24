@@ -42,6 +42,7 @@ import clojure.lang.Symbol;
 import clojure.lang.PersistentArrayMap;
 import clojure.lang.Keyword;
 import java.awt.event.KeyListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import org.openide.util.Exceptions;
 import org.netbeans.editor.Utilities;
@@ -115,11 +116,19 @@ private ArrayList<PersistentArrayMap> Scenario1ListExtLib=new ArrayList<Persiste
 private ArrayList<PersistentArrayMap> Scenario2ListExtLib=new ArrayList<PersistentArrayMap>();
 private ArrayList<PersistentArrayMap> Scenario4ListExtLib=new ArrayList<PersistentArrayMap>();
 
-private ArrayList<PersistentArrayMap> CurrentList;
+        public ClojureCodeCompletion_Provider(){
+          try {
+            RT.load("org/enclojure/ide/nb/editor/completion/cljcodecompletion");
+          } catch (IOException ex) {
+            Exceptions.printStackTrace(ex);
+          } catch (ClassNotFoundException ex) {
+            Exceptions.printStackTrace(ex);
+          }
+        }
 
 public class CompletionKeyListener implements KeyListener
 {
-        
+
 
         public void keyTyped(KeyEvent e) {
             //throw new UnsupportedOperationException("Not supported yet.");

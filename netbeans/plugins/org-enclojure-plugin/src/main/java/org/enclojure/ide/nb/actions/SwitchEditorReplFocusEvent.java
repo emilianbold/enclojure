@@ -17,6 +17,7 @@ public final class SwitchEditorReplFocusEvent implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         try {
+            RT.load("org/enclojure/ide/nb/actions/action_handler");
             switchReplFocusFn.invoke();
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);

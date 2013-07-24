@@ -54,11 +54,12 @@ public class ClojureMimeTypeDataObject extends MultiDataObject {
         super(pf, loader);
 
         LOG.log(Level.FINEST, "ctr()");
-
+        
         CookieSet cookies = getCookieSet();
          ed = DataEditorSupport.create(this, getPrimaryEntry(), cookies);        
         cookies.add((Node.Cookie)ed );
         try {
+            RT.load("org/enclojure/ide/nb/editor/data_object_listener");
             this.addPropertyChangeListener(
                     (PropertyChangeListener)getNewPropertyListenerFn.invoke(this));
         } catch (Throwable ex) {

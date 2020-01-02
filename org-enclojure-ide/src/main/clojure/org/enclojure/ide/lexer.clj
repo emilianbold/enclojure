@@ -53,7 +53,7 @@
 (def imports (ns-imports 'clojure.core))
 (def has-args (into {} (filter #(:arglists (meta (val %))) publics)))
 (def macros (into {} (filter #(:macro (meta (val %))) publics)))
-(def functions (filter #(not (contains? macros (key %))) has-args))
+(def functions (into {} (filter #(not (contains? macros (key %))) has-args)))
 
 (defn function? [s] (contains? functions (symbol s)))
 (defn macro? [s] (contains? macros (symbol s)))

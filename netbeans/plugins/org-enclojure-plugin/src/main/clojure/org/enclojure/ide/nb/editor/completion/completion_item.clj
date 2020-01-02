@@ -145,6 +145,7 @@
   (AsyncCompletionTask.
     (proxy [AsyncCompletionQuery] []
       (query [completionResultSet
+              doc
               i]
         (.setDocumentation completionResultSet
           (get-completion-doc item))

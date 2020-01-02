@@ -84,6 +84,10 @@ public class Installer extends ModuleInstall {
             requireFn.invoke(Symbol.create("org.enclojure.ide.nb.clojure.project.create"));            
             //requireFn.invoke(Symbol.create("org.enclojure.ide.nb.editor.repl-tc"));
             // options
+            RT.load("org/enclojure/ide/preferences/platform_options");
+            RT.load("org/enclojure/ide/nb/editor/repl_win");
+            RT.load("org/enclojure/ide/preferences/enclojure_options_category");
+
             requireFn.invoke(Symbol.create("org.enclojure.ide.preferences.platform-options"));
             requireFn.invoke(Symbol.create("org.enclojure.ide.preferences.enclojure-options-category"));
             etlog.log(Level.INFO,"Enclojure installer 4");

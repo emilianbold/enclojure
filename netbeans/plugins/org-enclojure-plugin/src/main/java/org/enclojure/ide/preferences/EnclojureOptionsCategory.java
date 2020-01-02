@@ -70,6 +70,7 @@ public class EnclojureOptionsCategory extends OptionsCategory {
     @Override
     public OptionsPanelController create() {        
         try {
+            RT.load("org/enclojure/ide/preferences/platform_options");
             RT.load("org/enclojure/ide/preferences/enclojure_options_category");
             return (OptionsPanelController) this.getOptionsControllerFunc.invoke();
         } catch (Exception ex) {

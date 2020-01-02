@@ -282,6 +282,8 @@ final public class ReplTopComponent extends TopComponent {
     public static synchronized ReplTopComponent getDefault() {
         if (instance == null) {
             try {
+                RT.load("org/enclojure/ide/preferences/platform_options");
+                RT.load("org/enclojure/ide/nb/editor/repl_win");
                 Var getIdeReplFn = RT.var("org.enclojure.ide.nb.editor.repl-win", "create-ide-repl");
                 return (ReplTopComponent)getIdeReplFn.invoke(IDE_REPL);
             } catch (Exception ex) {

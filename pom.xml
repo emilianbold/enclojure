@@ -15,8 +15,7 @@
         <clojure.version>1.5.1</clojure.version>
         <enclojure.version.dev>1.7</enclojure.version.dev>
         <enclojure.version.release>1.7</enclojure.version.release>
-        <netbeans.release>RELEASE73</netbeans.release>
-        <netbeans.version>RELEASE73</netbeans.version>
+        <netbeans.version>RELEASE112</netbeans.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.templates.dest/>
@@ -55,8 +54,14 @@
     </dependencies>
     <repositories>
         <repository>
-          <id>clojars</id>
-          <url>http://clojars.org/repo/</url>
+            <id>maven2</id>
+            <name>maven2 repo</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>netbeans</id>
+            <name>repository hosting netbeans.org api artifacts</name>
+            <url>http://bits.netbeans.org/maven2</url>
         </repository>
         <repository>
             <id>clojure-releases</id>
@@ -67,14 +72,8 @@
             <url>http://build.clojure.org/snapshots</url>
         </repository>
         <repository>
-            <id>maven2</id>
-            <name>maven2 repo</name>
-            <url>http://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-            <id>netbeans</id>
-            <name>repository hosting netbeans.org api artifacts</name>
-            <url>http://bits.netbeans.org/maven2</url>
+          <id>clojars</id>
+          <url>http://clojars.org/repo/</url>
         </repository>
     </repositories>
     <build>
@@ -126,13 +125,6 @@
     </modules>
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.sun</groupId>
-                <artifactId>tools</artifactId>
-                <version>${java.version}</version>
-                <systemPath>${java.home}/../lib/tools.jar</systemPath>
-                <scope>system</scope>
-            </dependency>
             <dependency>
                 <groupId>commons-logging</groupId>
                 <artifactId>commons-logging</artifactId>
@@ -196,11 +188,6 @@
             <dependency>
                 <groupId>org.netbeans.api</groupId>
                 <artifactId>org-apache-xml-resolver</artifactId>
-                <version>${netbeans.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.netbeans.api</groupId>
-                <artifactId>org-jdesktop-beansbinding</artifactId>
                 <version>${netbeans.version}</version>
             </dependency>
             <dependency>
@@ -400,6 +387,11 @@
             </dependency>
             <dependency>
                 <groupId>org.netbeans.api</groupId>
+                <artifactId>org-netbeans-modules-projectuiapi-base</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
                 <artifactId>org-netbeans-modules-queries</artifactId>
                 <version>${netbeans.version}</version>
             </dependency>
@@ -520,6 +512,11 @@
             </dependency>
             <dependency>
                 <groupId>org.netbeans.api</groupId>
+                <artifactId>org-openide-util-ui</artifactId>
+                <version>${netbeans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
                 <artifactId>org-openide-windows</artifactId>
                 <version>${netbeans.version}</version>
             </dependency>
@@ -555,11 +552,6 @@
             </dependency>
             <dependency>
                 <groupId>org.netbeans.external</groupId>
-                <artifactId>beansbinding-1.2.1</artifactId>
-                <version>${netbeans.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.netbeans.external</groupId>
                 <artifactId>jh-2.0_05</artifactId>
                 <version>RELEASE691</version>
             </dependency>
@@ -577,11 +569,6 @@
                 <groupId>org.netbeans.modules</groupId>
                 <artifactId>org-netbeans-modules</artifactId>
                 <version>${netbeans.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.5</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

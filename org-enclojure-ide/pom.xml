@@ -35,10 +35,6 @@
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-lookup</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.netbeans.api</groupId>
-            <artifactId>org-jdesktop-beansbinding</artifactId>
-        </dependency>
     </dependencies>
     <version>1.7</version>
 </project>

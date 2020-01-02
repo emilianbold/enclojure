@@ -48,7 +48,6 @@
 */
 package org.enclojure.ide.debugger.actions;
 
-import com.sun.tools.doclets.internal.toolkit.util.SourcePath;
 import java.util.*;
 import java.beans.*;
 
@@ -59,6 +58,7 @@ import org.netbeans.spi.debugger.*;
 
 import org.enclojure.ide.debugger.Context;
 import org.enclojure.ide.debugger.ClojureBreakpointAnnotationListener;
+import org.enclojure.ide.debugger.SourcePath;
 import org.enclojure.ide.debugger.util.Utils;
 import org.enclojure.ide.debugger.breakpoints.ClojureLineBreakpoint;
 import org.openide.filesystems.FileObject;

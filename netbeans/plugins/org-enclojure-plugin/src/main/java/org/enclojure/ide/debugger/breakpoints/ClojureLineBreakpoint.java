@@ -48,10 +48,10 @@
 */
 package org.enclojure.ide.debugger.breakpoints;
 
-import com.sun.tools.doclets.internal.toolkit.util.SourcePath;
 import org.netbeans.api.debugger.*;
 import org.netbeans.api.debugger.jpda.*;
 
+import org.enclojure.ide.debugger.SourcePath;
 import org.enclojure.ide.debugger.util.Utils;
 import org.openide.util.NbBundle;
 

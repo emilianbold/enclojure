@@ -68,7 +68,10 @@
       (boolean
         (let [lineno (NbDocument/findLineNumber d offset)
                 line-offset (NbDocument/findLineOffset d lineno)
-                next-line-offset (NbDocument/findLineOffset d (inc lineno))]
+                next-line-offset (try
+                                   (NbDocument/findLineOffset d (inc lineno))
+                                   ; fallback value which means an empty text link
+                                   (catch IndexOutOfBoundsException e line-offset))]
           (logger/info "is-hyperlink [{}]"
             (apply str (interpose " " [lineno line-offset next-line-offset])))
             (when-let [link-text (when (< line-offset next-line-offset)

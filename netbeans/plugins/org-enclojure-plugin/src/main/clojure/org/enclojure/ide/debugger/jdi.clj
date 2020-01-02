@@ -15,7 +15,7 @@
   (:use org.enclojure.ide.repl.repl-manager)
   (:import (com.sun.jdi Bootstrap)
     (com.sun.jdi.connect AttachingConnector)
-    (com.sun.tools.jdi LinkedHashMap)
+    (java.util LinkedHashMap)
     (org.netbeans.api.debugger.jpda AttachingDICookie)
     (org.netbeans.api.debugger DebuggerManager DebuggerInfo ActionsManager)))
 
@@ -45,7 +45,7 @@
 
 (defn get-acookie [port]
    (let [#^AttachingConnector c (first (:attaching-connectors (check-vmm)))
-         #^com.sun.tools.jdi.LinkedHashMap args (get-attach-dbg-args c port)]
+         #^java.util.LinkedHashMap args (get-attach-dbg-args c port)]
       (AttachingDICookie/create c args)))
 
 (defn get-dbi [port]

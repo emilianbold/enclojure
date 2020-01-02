@@ -1,0 +1,21 @@
+name: Create NBM
+
+on: [push]
+
+jobs:
+  build:
+    # macOS has Maven 3.6.3
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        export JAVA_HOME=`/usr/libexec/java_home -v 11`
+        mvn -v
+        ls -R .
+        mvn -X install
+    - name: Upload NBM
+      uses: actions/upload-artifact@v1
+      with:
+        name: org-enclojure-plugin.nbm
+        path: netbeans/plugins/org-enclojure-plugin/target/nbm/org-enclojure-plugin-1.7.nbm

@@ -41,7 +41,7 @@
     )
   (:import (org.enclojure.repl IReplWindow IRepl IReplWindowFactory)
             (org.enclojure.ide.repl ReplPanel)
-    (org.enclojure.ide.repl DefReplWindowFactory)))
+    ))
      
 
 (defn create-IRepl
@@ -96,7 +96,7 @@ otherwise creates a repl-top-componentwith a repl-panel and opens it if open-tc?
         (let [irepl (assure-repl-panel repl-context repl-window-factory)]
             (create-repl irepl repl-main/create-clojure-repl))))
   ([repl-context-arg]
-    (create-in-proc-repl repl-context-arg (DefReplWindowFactory.)))
+    (create-in-proc-repl repl-context-arg ((clojure.lang.Reflector/invokeConstructor (Class/forName "org.enclojure.ide.repl.factory.DefReplWindowFactory") (to-array [])))))
   ([] (create-in-proc-repl repl-data/-default-repl-data-)))
 
 (defn create-unmanaged-external-repl
@@ -118,7 +118,7 @@ using the host and port defined in the IReplUnmanagedExternalContext"
                (create-unmanaged-external-repl repl-context-arg repl-window-factory)))
       irepl)))
   ([repl-context-arg]
-    (create-unmanaged-external-repl repl-context-arg (DefReplWindowFactory.)))
+    (create-unmanaged-external-repl repl-context-arg ((clojure.lang.Reflector/invokeConstructor (Class/forName "org.enclojure.ide.repl.factory.DefReplWindowFactory") (to-array [])))))
   ([] (create-unmanaged-external-repl repl-data/-default-repl-data-)))
 
 (defn create-managed-external-repl
@@ -148,5 +148,5 @@ using the claspath of the running JVM."
                (create-managed-external-repl repl-context-arg repl-window-factory)))
         irepl))))
   ([repl-context-arg]
-    (create-managed-external-repl repl-context-arg (DefReplWindowFactory.)))
+    (create-managed-external-repl repl-context-arg ((clojure.lang.Reflector/invokeConstructor (Class/forName "org.enclojure.ide.repl.factory.DefReplWindowFactory") (to-array [])))))
   ([] (create-managed-external-repl repl-data/-default-repl-data-)))

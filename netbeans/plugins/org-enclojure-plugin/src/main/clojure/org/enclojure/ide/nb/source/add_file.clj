@@ -20,7 +20,7 @@
     (java.io File)
     (java.util.logging Level)
     (javax.swing JComponent DefaultComboBoxModel)
-    (javax.swing.event ChangeListener DocumentListener)
+    (javax.swing.event ChangeListener DocumentListener DocumentEvent)
     (org.netbeans.api.project Project)
     (org.netbeans.spi.project.ui.templates.support Templates)
     (org.openide WizardDescriptor)

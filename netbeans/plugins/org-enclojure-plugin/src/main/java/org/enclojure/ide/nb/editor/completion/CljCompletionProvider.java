@@ -46,7 +46,7 @@ public class CljCompletionProvider implements CompletionProvider {
     public int getAutoQueryTypes(JTextComponent arg0, String arg1) {
         try {
             RT.load("org/enclojure/ide/nb/editor/completion/completion_provider");
-            return ((Integer) getAutoQueryTypesFn.invoke(arg0,arg1)).intValue();
+            return ((Number) getAutoQueryTypesFn.invoke(arg0,arg1)).intValue();
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
         }

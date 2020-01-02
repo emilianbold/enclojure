@@ -24,6 +24,7 @@
     (java.util.logging Level)
     (java.util Collection)
     (javax.swing JToolTip)
+    (javax.swing.text JTextComponent)
     (org.netbeans.api.lexer TokenHierarchy TokenSequence Token)
     (java.awt.event ActionEvent))
   (:require

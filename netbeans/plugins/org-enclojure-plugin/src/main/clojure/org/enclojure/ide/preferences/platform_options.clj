@@ -108,8 +108,8 @@
       (if e
         (let [full-name (str dest-path File/separator (.getName e))]
           (with-open [fout (FileOutputStream. full-name)]
-            (faster-copy istream fout 8096)
-            (recur (.getNextEntry istream) (conj lib-names full-name))))
+            (faster-copy istream fout 8096))
+          (recur (.getNextEntry istream) (conj lib-names full-name)))
         lib-names))))
 
 (defn get-defined-platforms
@@ -126,13 +126,12 @@ and creates entries in the local preferences path."
             (let [pname (.getNameExt p)
                   dest (File. base-path pname)]
                 (.mkdirs dest)
-                (with-open [is (.getInputStream p)]
-                    (let [class-paths (unzip-to is dest)]
+                (let [class-paths (with-open [is (.getInputStream p)] (unzip-to is dest))]
                       (recur (rest ps) (conj pforms
                                          (struct platform pname
                                            class-paths 
                                            (= pname -default-platform-)
-                                           (hash pname)))))))
+                                           (hash pname))))))
           pforms)))))
 
 (defn is-shipped-platform? [platform]

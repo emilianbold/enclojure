@@ -628,17 +628,7 @@
                     <attr name="SystemFileSystem.icon"
                         urlvalue="nbresloc:/org/enclojure/ide/nb/clojure/project/enclojure 16x16.png"/>
                 </file>-->
-                <file name="Clojure 1.1 Maven Project" url="nbresloc:/org/enclojure/ide/templates/project/Clojure-1.1/Clojure-1.1.zip">
-                    <attr name="SystemFileSystem.localizingBundle" stringvalue="org.enclojure.ide.nb.editor.Bundle"/>
-                    <attr name="instantiatingWizardURL"
-                        urlvalue="nbresloc:/org/enclojure/ide/nb/clojure/project/ClojureTemplateDescription.html"/>
-                    <attr name="instantiatingIterator"
-                        methodvalue="org.enclojure.ide.nb.clojure.project.ClojureTemplateWizardIterator.createIterator"/>
-                    <attr name="template" boolvalue="true"/>
-                    <attr name="SystemFileSystem.icon"
-                        urlvalue="nbresloc:/org/enclojure/ide/nb/clojure/project/enclojure 16x16.png"/>
-                </file>
-                <file name="Clojure 1.2 Maven Project" url="nbresloc:/org/enclojure/ide/templates/project/Clojure-1.2/Clojure-1.2.zip">
+                <file name="Clojure Maven Project" url="nbresloc:/org/enclojure/ide/templates/project/Clojure-1.2/Clojure-1.2.zip">
                     <attr name="SystemFileSystem.localizingBundle" stringvalue="org.enclojure.ide.nb.editor.Bundle"/>
                     <attr name="instantiatingWizardURL"
                         urlvalue="nbresloc:/org/enclojure/ide/nb/clojure/project/ClojureTemplateDescription.html"/>

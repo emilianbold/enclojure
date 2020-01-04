@@ -1,18 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package org.enclojure.ide.preferences;
-
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import org.netbeans.spi.options.OptionsCategory;
-import org.netbeans.spi.options.OptionsPanelController;
-import clojure.lang.*;
-import org.openide.util.Exceptions;
-import org.openide.util.ImageUtilities;
-/*
 (comment
 *******************************************************************************
 *    Copyright (c) ThorTech, L.L.C.. All rights reserved.
@@ -30,6 +16,15 @@ import org.openide.util.ImageUtilities;
 *******************************************************************************
 )
 */
+package org.enclojure.ide.preferences;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import org.netbeans.spi.options.OptionsCategory;
+import org.netbeans.spi.options.OptionsPanelController;
+import clojure.lang.*;
+import org.openide.util.Exceptions;
+import org.openide.util.ImageUtilities;
 import org.openide.util.NbBundle;
 
 /**

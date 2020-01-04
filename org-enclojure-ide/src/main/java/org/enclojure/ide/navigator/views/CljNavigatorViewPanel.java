@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * CljNavigatorViewPanel.java
  *
  * Created on Mar 3, 2009, 9:48:36 AM

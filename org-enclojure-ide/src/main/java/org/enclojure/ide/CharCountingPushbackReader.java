@@ -1,16 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package org.enclojure.ide;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.io.PushbackReader;
 import java.io.Reader;
-/**
- *
- */
+
 public class CharCountingPushbackReader extends PushbackReader {
     protected long counter = 0;
 

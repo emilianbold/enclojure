@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * ReplHistory.java
  *
  * Created on Apr 9, 2009, 9:02:43 PM

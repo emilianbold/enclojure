@@ -16,8 +16,9 @@
 )
 (ns org.enclojure.ide.nb.clojure.project.create
   (:refer-clojure :exclude (replace))
-  (:require 
-    [org.enclojure.ide.preferences.platform-options :as platform-options]
+  (:require
+      [clojure.zip]
+      [org.enclojure.ide.preferences.platform-options :as platform-options]
     )
   (:use clojure.xml)
     (:import (java.util.zip ZipEntry ZipInputStream)

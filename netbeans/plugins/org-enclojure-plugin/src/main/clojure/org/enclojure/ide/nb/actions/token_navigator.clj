@@ -42,7 +42,8 @@
   "Get the current JEditorPane."
   ([nodes]
     (when-let [ec (editor-cookie nodes)]
-      (aget (.getOpenedPanes ec) 0)))
+      (when-let [panes (.getOpenedPanes ec)]
+        (aget panes 0))))
   ([]
     (current-editor-pane (-> (TopComponent/getRegistry) .getActivatedNodes))))
 

@@ -231,8 +231,9 @@
         (when (and (= (.getClickCount e) 2) obj)
           (let [{:keys [source-file start]}
                 (if (vector? obj) (first obj) obj)]
-            (open-file-fn source-file start)))))))
-          ;(javax.swing.JOptionPane/showMessageDialog nil (:source-file (first (second obj)))))))))
+            (when source-file
+              (open-file-fn source-file start))))))))
+;(javax.swing.JOptionPane/showMessageDialog nil (:source-file (first (second obj)))))))))
 
 (defmulti make-node
   (fn [[k v] sort-fn]
@@ -407,7 +408,7 @@
       (.setVisible true))
   {:tree jtree :nav-panel mypanel}))
 
-(defn new-context [jpanel context]
+(defn new-context [jpanel ^org.openide.loaders.DataObject context]
   (logger/info "Nav got {} {}" (class jpanel) (hash jpanel))
     (let [nav-panel-fn (or (@--nav-panel-fn-- (hash jpanel))
         (swap! --nav-panel-fn--

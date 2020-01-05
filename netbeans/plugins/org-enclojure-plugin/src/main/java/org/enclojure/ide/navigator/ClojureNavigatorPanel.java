@@ -7,6 +7,7 @@ import java.awt.BorderLayout;
 import java.util.Collection;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import org.enclojure.ide.nb.editor.ClojureMimeTypeDataObject;
 import org.netbeans.spi.navigator.NavigatorPanel;
 import org.openide.util.Exceptions;
 import org.openide.util.Lookup;
@@ -25,7 +26,7 @@ public class ClojureNavigatorPanel implements NavigatorPanel {
     private JComponent panelUI;
     /** template for finding data in given context.
      * Object used as example, replace with your own data source, for example JavaDataObject etc */
-    private static final Lookup.Template MY_DATA = new Lookup.Template(Object.class);
+    private static final Lookup.Template MY_DATA = new Lookup.Template(ClojureMimeTypeDataObject.class);
     /** current context to work on */
     private Lookup.Result curContext;
     /** listener to context changes */
